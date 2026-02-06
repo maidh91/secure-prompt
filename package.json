@@ -4,7 +4,24 @@
   "description": "Securely prompt stdio using secure buffers",
   "main": "index.js",
   "dependencies": {
+    "bare-net": "^2.2.0",
+    "bare-process": "^4.2.2",
+    "bare-tty": "^5.0.3",
     "sodium-native": "^4.0.8"
+  },
+  "imports": {
+    "net": {
+      "bare": "bare-net",
+      "default": "net"
+    },
+    "process": {
+      "bare": "bare-process",
+      "default": "process"
+    },
+    "tty": {
+      "bare": "bare-tty",
+      "default": "tty"
+    }
   },
   "repository": {
     "type": "git",
