@@ -7,7 +7,7 @@
     "bare-net": "^2.2.0",
     "bare-process": "^4.2.2",
     "bare-tty": "^5.0.3",
-    "sodium-native": "^4.0.8"
+    "sodium-native": "^5.0.10"
   },
   "imports": {
     "net": {
