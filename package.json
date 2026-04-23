@@ -3,6 +3,11 @@
   "version": "1.2.0",
   "description": "Securely prompt stdio using secure buffers",
   "main": "index.js",
+  "scripts": {
+    "lint": "prettier --check . && lunte",
+    "format": "prettier --write . && lunte --fix",
+    "test": "brittle -c test/all.js"
+  },
   "dependencies": {
     "sodium-native": "^4.0.8"
   },
@@ -15,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/holepunchto/secure-prompt/issues"
   },
-  "homepage": "https://github.com/holepunchto/secure-prompt"
+  "homepage": "https://github.com/holepunchto/secure-prompt",
+  "devDependencies": {
+    "brittle": "^3.19.1",
+    "lunte": "^1.7.0",
+    "prettier": "^3.8.3",
+    "prettier-config-holepunch": "^2.0.0"
+  }
 }

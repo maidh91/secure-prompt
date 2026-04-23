@@ -4,12 +4,12 @@ const sodium = require('sodium-native')
 
 let doPrompt = null
 
-module.exports = function prompt () {
+module.exports = function prompt() {
   if (doPrompt === null) doPrompt = init()
   return doPrompt()
 }
 
-function init () {
+function init() {
   const fd = 0
   const ctx = {}
   const tty = new TTY(fd, ctx)
@@ -28,7 +28,7 @@ function init () {
     manualStart: true,
     onread: {
       buffer: tmp,
-      callback (nread, buf) {
+      callback(nread, buf) {
         sodium.sodium_mprotect_readwrite(userBuffer)
 
         let eof = !useRaw
@@ -46,7 +46,7 @@ function init () {
             continue
           }
 
-          eol = (b === 13 || b === 10)
+          eol = b === 13 || b === 10
           eof = true
           break
         }
@@ -63,7 +63,7 @@ function init () {
   sock.pause()
   return doPrompt
 
-  function doPrompt () {
+  function doPrompt() {
     if (userBuffer) throw new Error('Only one prompt can be active')
 
     return new Promise((resolve, reject) => {
@@ -77,7 +77,7 @@ function init () {
     })
   }
 
-  function done (success) {
+  function done(success) {
     sodium.sodium_mprotect_noaccess(tmp)
 
     if (!success) {
