@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/holepunchto/secure-prompt/issues"
   },
-  "homepage": "https://github.com/holepunchto/secure-prompt"
+  "homepage": "https://github.com/holepunchto/secure-prompt",
+  "scripts": {
+    "test": "node test/pipe-stdin.js"
+  }
 }
